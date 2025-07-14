@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>오늘의 운세 뽑기</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #f9f5ff;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    input, button {
+      padding: 12px;
+      font-size: 1rem;
+      margin-top: 10px;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔮 오늘의 운세를 확인해보세요!</h1>
+    <p>생년월일을 입력하고 아래 버튼을 눌러주세요.</p>
+    <input type="text" id="birthdate" placeholder="예: 1992-04-09" />
+    <button onclick="showFortune()">운세 뽑기</button>
+    <div id="result"></div>
+
+    <!-- 광고 자리 (Google AdSense 승인 후 스크립트 삽입 예정) -->
+    <div style="margin-top: 40px;">
+      <!-- 광고 코드 삽입 위치 -->
+    </div>
+  </div>
+
+  <script>
+    const fortunes = [
+      "🎉 오늘은 뜻밖의 행운이 찾아올 거예요!",
+      "💼 노력의 결실이 가까이 오고 있습니다.",
+      "💖 새로운 인연이 나타날 수 있어요.",
+      "🌧 오늘은 실수에 주의하는 하루가 좋아요.",
+      "🍀 과감한 시도가 행운으로 이어질 거예요.",
+      "🔥 지금 시작하면 누구보다 앞서나갈 수 있습니다.",
+      "🌈 마음의 평화를 유지하면 좋은 일이 생겨요.",
+      "💡 멋진 아이디어가 당신을 기다리고 있어요!"
+    ];
+
+    function showFortune() {
+      const birthdate = document.getElementById("birthdate").value;
+      if (!birthdate) {
+        alert("생년월일을 입력해주세요!");
+        return;
+      }
+      const randomIndex = Math.floor(Math.random() * fortunes.length);
+      document.getElementById("result").textContent = fortunes[randomIndex];
+    }
+  </script>
+</body>
+</html>
